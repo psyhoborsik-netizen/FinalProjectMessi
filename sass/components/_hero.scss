@@ -65,5 +65,82 @@
                 }
             }
         }
+
+        .hero__imgs {
+            position: relative;
+            width: 530px;
+            height: 500px;
+            flex-shrink: 0;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 110px;
+                height: 110px;
+                background-image: radial-gradient(#3A3A3F 2px, transparent 2px);
+                background-size: 16px 16px;
+            }
+
+            &::after {
+                content: "від 399 грн";
+                position: absolute;
+                top: 190px;
+                left: 365px;
+                z-index: 3;
+                padding: 10px 20px;
+                background-color: #FFFFFF;
+                border-radius: 30px;
+                color: #131316;
+                font-family: Inter, sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                white-space: nowrap;
+                transform: rotate(-8deg);
+            }
+
+            img {
+                position: absolute;
+                object-fit: contain;
+                box-sizing: border-box;
+                border-radius: 20px;
+                transition: transform 0.4s ease;
+            }
+
+            img:first-child {
+                top: 60px;
+                left: 0;
+                width: 440px;
+                height: 300px;
+                padding: 40px;
+                transform: rotate(-2deg);
+                z-index: 1;
+            }
+
+            img:last-child {
+                top: 200px;
+                right: 20px;
+                width: 210px;
+                height: 210px;
+                padding: 30px;
+                transform: rotate(8deg);
+                z-index: 2;
+            }
+
+            img:first-child:hover {
+                transform: rotate(0deg) scale(1.03);
+            }
+
+            img:last-child:hover {
+                transform: rotate(0deg) scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero .container .hero__imgs {
+        display: none;
     }
 }

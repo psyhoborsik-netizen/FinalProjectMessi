@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -285,7 +286,76 @@ header .container .search .search__cart:hover {
   text-decoration: none;
   color: #FFFFFF;
 }
+.hero .container .hero__imgs {
+  position: relative;
+  width: 530px;
+  height: 500px;
+  flex-shrink: 0;
+}
+.hero .container .hero__imgs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 110px;
+  background-image: radial-gradient(#3A3A3F 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+.hero .container .hero__imgs::after {
+  content: "від 399 грн";
+  position: absolute;
+  top: 190px;
+  left: 365px;
+  z-index: 3;
+  padding: 10px 20px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  color: #131316;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: rotate(-8deg);
+}
+.hero .container .hero__imgs img {
+  position: absolute;
+  -o-object-fit: contain;
+     object-fit: contain;
+  box-sizing: border-box;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+.hero .container .hero__imgs img:first-child {
+  top: 60px;
+  left: 0;
+  width: 440px;
+  height: 300px;
+  padding: 40px;
+  transform: rotate(-2deg);
+  z-index: 1;
+}
+.hero .container .hero__imgs img:last-child {
+  top: 200px;
+  right: 20px;
+  width: 210px;
+  height: 210px;
+  padding: 30px;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+.hero .container .hero__imgs img:first-child:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+.hero .container .hero__imgs img:last-child:hover {
+  transform: rotate(0deg) scale(1.05);
+}
 
+@media (max-width: 1100px) {
+  .hero .container .hero__imgs {
+    display: none;
+  }
+}
 .filter {
   width: 100%;
   display: flex;
